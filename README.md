@@ -1,70 +1,199 @@
-# Getting Started with Create React App
+# 🚀 Priyanshu Dhyani - Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive portfolio website built with React.js, featuring dynamic animations, dark/light theme toggle, and a beautiful gradient design. This portfolio showcases my skills, experience, projects, and provides an easy way to get in touch.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **🎨 Modern Design**: Clean, professional interface with gradient backgrounds and smooth animations
+- **🌓 Dark/Light Theme**: Toggle between dark and light modes with smooth transitions
+- **📱 Fully Responsive**: Optimized for all device sizes (desktop, tablet, mobile)
+- **🎭 Smooth Animations**: Powered by Framer Motion for engaging user interactions
+- **⚡ Fast Performance**: Built with React 19 and optimized for speed
+- **🎯 Interactive Sections**:
+  - Hero section with animated introduction
+  - Skills showcase with technology icons
+  - Professional experience timeline
+  - Education background
+  - Project portfolio with live demos
+  - Contact form with social links
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React.js 19, JavaScript (ES6+)
+- **Styling**: Tailwind CSS, Custom CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Routing**: React Router DOM
+- **Build Tool**: Create React App
+- **Package Manager**: npm
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Quick Start
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Make sure you have the following installed:
+- Node.js (version 14 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/priya-anshu/portfolio.git
+   cd portfolio
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Start the development server**
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the portfolio
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Project Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+portfolio/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── ...
+├── src/
+│   ├── components/
+│   │   ├── Hero.jsx          # Landing section
+│   │   ├── Skills.jsx        # Technical skills
+│   │   ├── Experience.jsx    # Work experience
+│   │   ├── Education.jsx     # Educational background
+│   │   ├── Projects.jsx      # Project showcase
+│   │   ├── Contact.jsx       # Contact form
+│   │   ├── Footer.jsx        # Footer section
+│   │   └── ThemeToggle.jsx   # Theme switcher
+│   ├── contexts/
+│   │   └── ThemeContext.jsx  # Theme management
+│   ├── App.jsx              # Main application
+│   ├── App.css              # Global styles
+│   └── index.js             # Entry point
+├── package.json
+└── README.md
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎯 Available Scripts
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **`npm start`** - Runs the app in development mode
+- **`npm test`** - Launches the test runner
+- **`npm run build`** - Builds the app for production
+- **`npm run eject`** - Ejects from Create React App (one-way operation)
 
-## Learn More
+## 🌟 Key Sections
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🏠 Hero Section
+- Animated introduction with gradient text effects
+- Professional photo and brief introduction
+- Call-to-action buttons for resume and contact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 💼 Experience
+- Interactive timeline of professional experience
+- Detailed role descriptions and achievements
+- Company logos and duration
 
-### Code Splitting
+### 🎓 Education
+- Academic background and certifications
+- Institution details and graduation years
+- Relevant coursework and achievements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 🛠️ Skills
+- Categorized technical skills
+- Interactive skill cards with proficiency levels
+- Technology icons and descriptions
 
-### Analyzing the Bundle Size
+### 📂 Projects
+- Showcase of major projects with live demos
+- Technology stack for each project
+- GitHub links and detailed descriptions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 📞 Contact
+- Contact form with validation
+- Social media links
+- Professional contact information
 
-### Making a Progressive Web App
+## 🎨 Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Theme Colors
+The theme system is managed through `ThemeContext.jsx`. You can customize colors by modifying the theme object:
 
-### Advanced Configuration
+```javascript
+const themes = {
+  light: {
+    bg: 'from-gray-50 to-white',
+    text: 'text-gray-900',
+    // ... other properties
+  },
+  dark: {
+    bg: 'from-gray-900 to-black',
+    text: 'text-white',
+    // ... other properties
+  }
+};
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Adding New Sections
+1. Create a new component in `src/components/`
+2. Import and add it to `App.jsx`
+3. Update the navigation if needed
 
-### Deployment
+## 📱 Responsive Design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The portfolio is fully responsive and tested on:
+- Desktop (1920px+)
+- Laptop (1024px - 1919px)
+- Tablet (768px - 1023px)
+- Mobile (320px - 767px)
 
-### `npm run build` fails to minify
+## 🚀 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Build for Production
+```bash
+npm run build
+```
+
+### Deploy to Netlify
+1. Build the project: `npm run build`
+2. Drag and drop the `build` folder to Netlify
+3. Or connect your GitHub repository for automatic deployments
+
+### Deploy to Vercel
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 About the Developer
+
+**Priyanshu Dhyani** - Full Stack Developer
+- 📧 Email: priyanshidhyani9808@gmail.com
+- 📱 Phone: +91 9808 129 751
+- 🌍 Location: Uttarakhand, India
+- 💼 LinkedIn: [priyanshu-dhyani-2a7790266](https://www.linkedin.com/in/priyanshu-dhyani-2a7790266/)
+- 🐙 GitHub: [priya-anshu](https://github.com/priya-anshu)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/priya-anshu/portfolio/issues).
+
+## ⭐ Show Your Support
+
+Give a ⭐️ if you like this project!
+
+---
+
+*Built with ❤️ by Priyanshu Dhyani*
