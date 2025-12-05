@@ -17,21 +17,20 @@ import { useTheme } from "../contexts/ThemeContext";
 const education = [
   {
     id: 1,
-    degree: "MCA",
+    degree: "Master of Computer Applications (MCA)",
     institution: "Graphic Era Hill University",
-    location: "Bell Road, Dehradun",
-    duration: "2023-2025",
-    status: "Current",
-    description: "Master of Computer Applications with focus on Advanced DBMS and Machine Learning",
+    location: "Dehradun",
+    duration: "2023 – 2025",
+    status: "Completed",
+    description: "Focus on full-stack development, advanced DBMS, and learning ML and data-driven application development.",
     highlights: [
-      "Building real world AI and full stack web applications",
-      "Advanced Database Management Systems",
-      "Machine Learning and AI fundamentals",
-      "Full-stack web development projects"
+      "Building real-time and full-stack applications",
+      "Advanced DBMS and data modeling",
+      "Learning ML and data-driven development"
     ],
     coursework: [
-      "Advanced DBMS", "Machine Learning", "Web Development", 
-      "Software Engineering", "Data Structures", "Algorithms"
+      "Advanced DBMS", "Full-Stack Development", "Data Structures", 
+      "Algorithms", "Web Development", "Software Engineering"
     ],
     icon: Brain,
     gradient: "from-blue-400 to-cyan-500",
@@ -39,15 +38,14 @@ const education = [
   },
   {
     id: 2,
-    degree: "BSc. IT",
-    institution: "D.A.V PG College",
-    location: "Karanpur, Dehradun",
-    duration: "2020-2023",
+    degree: "Bachelor of Science in IT (BSc IT)",
+    institution: "D.A.V. PG College",
+    location: "Dehradun",
+    duration: "2020 – 2023",
     status: "Completed",
-    description: "Bachelor of Science in Information Technology with foundational knowledge in core IT concepts",
+    description: "Foundation in programming, DBMS, and web technologies.",
     highlights: [
-      "Gained foundational knowledge in core IT concepts",
-      "Programming logic and computer science fundamentals",
+      "Programming fundamentals and problem solving",
       "Database management and web technologies",
       "Software development principles"
     ],
@@ -58,46 +56,6 @@ const education = [
     icon: BookOpen,
     gradient: "from-green-400 to-emerald-500",
     bgGradient: "from-green-400/20 to-emerald-500/20"
-  },
-  {
-    id: 3,
-    degree: "XII (Science)",
-    institution: "Constancia School",
-    location: "Dehradun",
-    duration: "2019-2020",
-    status: "Completed",
-    description: "Higher Secondary Education with Science stream focusing on Physics, Chemistry, and Mathematics",
-    highlights: [
-      "Strong foundation in Science and Mathematics",
-      "Analytical and problem-solving skills development",
-      "Preparation for engineering and technology careers"
-    ],
-    coursework: [
-      "Physics", "Chemistry", "Mathematics", "Computer Science"
-    ],
-    icon: GraduationCap,
-    gradient: "from-purple-400 to-pink-500",
-    bgGradient: "from-purple-400/20 to-pink-500/20"
-  },
-  {
-    id: 4,
-    degree: "X (Science)",
-    institution: "Constancia School",
-    location: "Dehradun",
-    duration: "2017-2018",
-    status: "Completed",
-    description: "Secondary Education with comprehensive foundation in core subjects",
-    highlights: [
-      "Comprehensive foundation in core subjects",
-      "Development of critical thinking skills",
-      "Strong academic performance"
-    ],
-    coursework: [
-      "Mathematics", "Science", "English", "Social Studies", "Computer Applications"
-    ],
-    icon: Award,
-    gradient: "from-orange-400 to-red-500",
-    bgGradient: "from-orange-400/20 to-red-500/20"
   }
 ];
 
@@ -323,7 +281,7 @@ export default function Education() {
                           </motion.div>
                           <motion.span
                             className={`px-4 py-2 text-sm font-bold rounded-full shadow-lg w-fit ${
-                              edu.status === 'Current' 
+                              edu.status === 'Completed' 
                                 ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white'
                                 : 'bg-gradient-to-r from-blue-400 to-cyan-500 text-white'
                             }`}

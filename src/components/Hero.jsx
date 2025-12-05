@@ -166,7 +166,7 @@ export default function Hero() {
             <Sparkles className="w-10 h-10 my-4 text-yellow-400" />
           </motion.div>
           <span className={`text-xl md:text-2xl ${colors.textSecondary} font-medium`}>
-            Hello, I'm
+            Hello, I’m
           </span>
         </motion.div>
 
@@ -235,7 +235,7 @@ export default function Hero() {
                 ease: "easeInOut"
               }}
             >
-              Full Stack Developer
+              AI-Assisted Full-Stack Developer
             </motion.span>
             <Coffee className="w-6 h-6 text-amber-500" />
           </motion.div>
@@ -246,8 +246,7 @@ export default function Hero() {
           className={`text-lg md:text-xl ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed mb-12`}
           variants={itemVariants}
         >
-          MCA Graduate passionate about creating innovative web solutions with React.js, Firebase, and modern technologies. 
-          I transform ideas into scalable, user-friendly applications that make a difference.
+          I build scalable and user-friendly web applications using React.js, Firebase, and modern development workflows. Skilled in prompt engineering, debugging, and deploying real-time products. Currently learning Machine Learning and Data Science to develop intelligent systems.
         </motion.p>
 
         {/* 3D Action Buttons */}
@@ -256,9 +255,9 @@ export default function Hero() {
           variants={itemVariants}
         >
           {[
-            { href: "https://github.com/priya-anshu", icon: Github, label: "GitHub", gradient: colors.primary },
-            { href: "https://www.linkedin.com/in/priyanshu-dhyani-2a7790266/", icon: Linkedin, label: "LinkedIn", gradient: colors.secondary },
-            { href: "mailto:priyanshidhyani9808@gmail.com", icon: Mail, label: "Contact", gradient: colors.accent }
+            { href: "https://github.com/priya-anshu", icon: Github, label: "GitHub →", gradient: colors.primary },
+            { href: "https://www.linkedin.com/in/priyanshu-dhyani-2a7790266/", icon: Linkedin, label: "LinkedIn →", gradient: colors.secondary },
+            { href: "mailto:priyanshudhyani9808@gmail.com", icon: Mail, label: "Email →", gradient: colors.accent }
           ].map((link, index) => (
             <motion.a
               key={index}
@@ -313,9 +312,9 @@ export default function Hero() {
           variants={itemVariants}
         >
           {[
-            { value: "2+", label: "Years Experience", color: "text-blue-500" },
-            { value: "5+", label: "Projects Built", color: "text-purple-500" },
-            { value: "∞", label: "Coffee Cups", color: "text-pink-500" }
+            { value: "2+", label: "Projects Deployed", color: "text-blue-500" },
+            { value: "1", label: "Industry Internship", color: "text-purple-500" },
+            { value: "Cont.", label: "Learning and Skill Growth", color: "text-pink-500" }
           ].map((stat, index) => (
             <motion.div
               key={index}

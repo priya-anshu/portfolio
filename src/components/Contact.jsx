@@ -19,8 +19,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "priyanshidhyani9808@gmail.com",
-    href: "mailto:priyanshidhyani9808@gmail.com",
+    value: "priyanshudhyani9808@gmail.com",
+    href: "mailto:priyanshudhyani9808@gmail.com",
     gradient: "from-red-400 to-pink-500",
     bgGradient: "from-red-400/20 to-pink-500/20"
   },
@@ -165,7 +165,7 @@ export default function Contact() {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            Ready to bring your ideas to life? Let's collaborate and create something amazing together!
+            Looking for opportunities to contribute in Full-Stack and AI-powered development roles.
           </motion.p>
         </motion.div>
 

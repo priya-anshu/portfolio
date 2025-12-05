@@ -7,60 +7,31 @@ const projects = [
   {
     id: 1,
     name: "BioLift",
-    subtitle: "Smart Fitness Companion Web App",
-    description: "A comprehensive dual-theme fitness platform that empowers solo gym-goers with smart workout plans, adaptive routines, diet suggestions, and real-time performance insights.",
-    longDescription: "Developed a competitive ranking system that updates based on users' sprint-based workout intensity, PRs, and consistency, motivating them to push further and improve their strength levels. Implemented Firebase Realtime Database & Firestore to manage user data across distributed systems, ensuring low-latency, scalable updates.",
+    subtitle: "AI-Enhanced Fitness Web App",
+    description: "BioLift is a production-ready fitness tracking application with secure authentication and real-time performance insights.",
+    longDescription: "Developed the full system independently using prompt-assisted UI generation and manual implementation of data flow, debugging, and deployment.",
     technologies: [
-      "React.js", "Tailwind CSS", "Firebase", "Firestore", "Realtime DB", 
-      "Firebase Storage", "Git & GitHub", "TensorFlow.js", "OpenAI API"
+      "React.js", "Tailwind CSS", "Firebase (Auth, Firestore, Realtime DB, Storage)", 
+      "Git", "Prompt Engineering"
     ],
     features: [
-      "Dual-theme fitness platform",
-      "Smart workout plan generation",
-      "Adaptive routines based on user progress",
-      "Diet suggestions and nutrition tracking",
-      "Competitive ranking system",
+      "Secure authentication",
       "Real-time performance insights",
-      "Firebase Realtime Database integration",
-      "Low-latency, scalable architecture"
+      "Prompt-assisted UI generation",
+      "Manual data flow implementation",
+      "Debugging and deployment",
+      "Full-stack architecture",
+      "Firebase integration across services",
+      "Solo-built production-ready delivery"
     ],
     githubLink: "https://github.com/priya-anshu/bio-lift",
-    liveLink: "", // Add if available
-    date: "Sep 2025",
+    liveLink: "https://biolift-c37b6.web.app/",
+    date: "2025",
     status: "Completed",
     icon: Dumbbell,
     gradient: "from-green-400 to-emerald-500",
     bgGradient: "from-green-400/20 to-emerald-500/20",
     accentColor: "text-green-500"
-  },
-  {
-    id: 2,
-    name: "NAC",
-    subtitle: "Next-Gen Assistive Controller - AI Powered Desktop Assistant",
-    description: "An advanced AI-powered desktop assistant featuring real-time gesture detection, eye-tracking, and speech recognition for hands-free computer interaction.",
-    longDescription: "Developed real-time gesture detection mapping specific hand poses to cursor movements and clicks with sub-50ms latency and 98% recognition accuracy. Built an eye-tracking module using standard webcam input with adaptive smoothing and calibration routines to enable precise pointer control without external hardware.",
-    technologies: [
-      "Python", "OpenCV", "MediaPipe", "PyQt6", "Speech Recognition",
-      "PyAudio", "PyAutoGUI", "python-opencv"
-    ],
-    features: [
-      "Real-time gesture detection (sub-50ms latency)",
-      "98% recognition accuracy",
-      "Eye-tracking module with webcam input",
-      "Adaptive smoothing and calibration",
-      "Continuous speech recognition",
-      "Natural language parsing",
-      "App launching and web search",
-      "PyTTSx3-powered TTS feedback"
-    ],
-    githubLink: "https://github.com/priya-anshu/NAC_Next-GenAssistiveController",
-    liveLink: "", // Add if available
-    date: "May 2025",
-    status: "Completed",
-    icon: Brain,
-    gradient: "from-purple-400 to-indigo-500",
-    bgGradient: "from-purple-400/20 to-indigo-500/20",
-    accentColor: "text-purple-500"
   }
 ];
 

@@ -18,76 +18,24 @@ import { useTheme } from "../contexts/ThemeContext";
 const experiences = [
   {
     id: 1,
-    company: "Pledgent Technologies",
-    role: "React Developer Intern",
-    duration: "Jun 2025 - Aug 2025",
-    location: "Remote",
-    type: "Internship",
-    description: "Strengthened React.js fundamentals by building component-based UIs with JSX, hooks, and React Router for seamless navigation. Implemented global state management using Redux Toolkit and integrated Firebase Authentication, Firestore, and Realtime Database for scalable full-stack functionality.",
-    skills: [
-      "React.js", "JSX", "Hooks", "React Router", "Redux Toolkit", 
-      "Firebase", "Authentication", "Firestore", "Realtime DB", 
-      "Tailwind CSS", "Jest", "React Testing Library"
-    ],
-    achievements: [
-      "Built component-based UIs with seamless navigation",
-      "Implemented global state management with Redux Toolkit",
-      "Integrated Firebase services for full-stack functionality",
-      "Designed responsive interfaces with Tailwind CSS",
-      "Conducted thorough testing with Jest and React Testing Library",
-      "Deployed projects on Netlify/Vercel"
-    ],
-    icon: Code,
-    gradient: "from-blue-400 to-cyan-500",
-    bgGradient: "from-blue-400/20 to-cyan-500/20"
-  },
-  {
-    id: 2,
     company: "Graphic Era Deemed University",
     role: "SDE Intern",
-    duration: "Apr 2024 - Jul 2024",
+    duration: "Apr 2024 – Jul 2024",
     location: "Dehradun, India",
     type: "Internship",
-    description: "Collaborated with development teams to analyze problems and design efficient software solutions. Developed dynamic, user-friendly interfaces and optimized website performance. Organized and maintained documentation, files, and project reports to support senior developers.",
+    description: "Developed and enhanced front-end modules for internal applications.",
     skills: [
-      "HTML", "CSS", "MongoDB", "Git", "GitHub", "Software Development",
-      "Problem Analysis", "Documentation", "Team Collaboration"
+      "HTML", "CSS", "MongoDB", "Git", "GitHub"
     ],
     achievements: [
-      "Collaborated with development teams for problem analysis",
-      "Designed efficient software solutions",
-      "Developed dynamic, user-friendly interfaces",
-      "Optimized website performance",
-      "Maintained comprehensive project documentation",
-      "Supported senior developers with organized file management"
+      "Developed and enhanced front-end modules for internal applications.",
+      "Assisted in frontend-to-backend integration and debugging.",
+      "Improved UI responsiveness and code efficiency.",
+      "Maintained documentation and Git version control practices."
     ],
     icon: Users,
     gradient: "from-green-400 to-emerald-500",
     bgGradient: "from-green-400/20 to-emerald-500/20"
-  },
-  {
-    id: 3,
-    company: "Forever Living Product (UK)",
-    role: "Preferred Customer",
-    duration: "Jan 2023 - Apr 2023",
-    location: "UK",
-    type: "Customer Relations",
-    description: "Built strong customer relationships with personalized product recommendations and responsive support. Promoted and sold wellness and skincare products through social media and personal outreach. Managed inventory, tracked sales data, and identified potential growth areas in a competitive market.",
-    skills: [
-      "Customer Relations", "Social Media Marketing", "Sales", 
-      "Inventory Management", "Data Analysis", "Market Research"
-    ],
-    achievements: [
-      "Built strong customer relationships with personalized recommendations",
-      "Promoted wellness and skincare products through social media",
-      "Managed inventory and tracked sales data effectively",
-      "Identified potential growth areas in competitive market",
-      "Provided responsive customer support",
-      "Developed social media marketing strategies"
-    ],
-    icon: TrendingUp,
-    gradient: "from-purple-400 to-pink-500",
-    bgGradient: "from-purple-400/20 to-pink-500/20"
   }
 ];
 

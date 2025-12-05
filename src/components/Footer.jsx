@@ -112,8 +112,7 @@ export default function Footer() {
               Priyanshu Dhyani
             </motion.h3>
             <p className={`${colors.textSecondary} mb-4 max-w-md leading-relaxed`}>
-              Full Stack Developer passionate about creating beautiful, functional web applications. 
-              Let's build something amazing together!
+              Building future-ready applications with continuous learning and innovation.
             </p>
             <motion.div
               className="flex items-center gap-2 text-sm"

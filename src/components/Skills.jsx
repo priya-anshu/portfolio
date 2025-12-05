@@ -16,31 +16,42 @@ import { useTheme } from "../contexts/ThemeContext";
 
 const skillCategories = [
   {
-    title: "Programming Languages",
-    icon: Code2,
-    gradient: "from-blue-400 to-cyan-500",
-    bgGradient: "from-blue-400/20 to-cyan-500/20",
-    skills: [
-      { name: "C++", level: 90, color: "from-blue-400 to-blue-600" },
-      { name: "Python", level: 85, color: "from-yellow-400 to-yellow-600" },
-      { name: "Java", level: 80, color: "from-orange-400 to-orange-600" },
-      { name: "JavaScript", level: 88, color: "from-yellow-300 to-yellow-500" },
-      { name: "SQL", level: 85, color: "from-blue-500 to-blue-700" },
-      { name: "C", level: 75, color: "from-gray-400 to-gray-600" }
-    ]
-  },
-  {
-    title: "Web Development",
+    title: "Frontend",
     icon: Globe,
     gradient: "from-green-400 to-emerald-500",
     bgGradient: "from-green-400/20 to-emerald-500/20",
     skills: [
       { name: "React.js", level: 92, color: "from-cyan-400 to-cyan-600" },
-      { name: "HTML", level: 95, color: "from-orange-400 to-orange-600" },
-      { name: "CSS", level: 90, color: "from-blue-400 to-blue-600" },
+      { name: "JavaScript (ES6+)", level: 90, color: "from-yellow-300 to-yellow-500" },
       { name: "Tailwind CSS", level: 88, color: "from-teal-400 to-teal-600" },
-      { name: "PHP", level: 75, color: "from-purple-400 to-purple-600" },
-      { name: "Node.js", level: 80, color: "from-green-500 to-green-700" }
+      { name: "HTML5", level: 92, color: "from-orange-400 to-orange-600" },
+      { name: "CSS3", level: 90, color: "from-blue-400 to-blue-600" },
+      { name: "Android UI (Basic)", level: 60, color: "from-purple-400 to-purple-600" }
+    ]
+  },
+  {
+    title: "Backend & Cloud",
+    icon: Wrench,
+    gradient: "from-orange-400 to-red-500",
+    bgGradient: "from-orange-400/20 to-red-500/20",
+    skills: [
+      { name: "Firebase Authentication", level: 87, color: "from-yellow-400 to-yellow-600" },
+      { name: "Firestore", level: 87, color: "from-orange-400 to-orange-600" },
+      { name: "Realtime Database", level: 85, color: "from-green-400 to-green-600" },
+      { name: "Firebase Storage", level: 85, color: "from-pink-400 to-pink-600" },
+      { name: "Node.js (Basic)", level: 60, color: "from-green-500 to-green-700" }
+    ]
+  },
+  {
+    title: "Programming",
+    icon: Code2,
+    gradient: "from-blue-400 to-cyan-500",
+    bgGradient: "from-blue-400/20 to-cyan-500/20",
+    skills: [
+      { name: "Java", level: 85, color: "from-orange-400 to-orange-600" },
+      { name: "Python", level: 82, color: "from-yellow-400 to-yellow-600" },
+      { name: "C", level: 78, color: "from-gray-400 to-gray-600" },
+      { name: "C++", level: 78, color: "from-blue-400 to-blue-600" }
     ]
   },
   {
@@ -49,34 +60,29 @@ const skillCategories = [
     gradient: "from-purple-400 to-pink-500",
     bgGradient: "from-purple-400/20 to-pink-500/20",
     skills: [
-      { name: "Firebase", level: 90, color: "from-yellow-400 to-yellow-600" },
-      { name: "MySQL", level: 85, color: "from-blue-500 to-blue-700" },
-      { name: "Oracle (Advanced)", level: 88, color: "from-red-400 to-red-600" },
-      { name: "Firestore", level: 87, color: "from-orange-400 to-orange-600" },
-      { name: "Realtime DB", level: 85, color: "from-green-400 to-green-600" }
+      { name: "Oracle DBMS (Advanced)", level: 88, color: "from-red-400 to-red-600" },
+      { name: "MySQL", level: 85, color: "from-blue-500 to-blue-700" }
     ]
   },
   {
-    title: "Other Tools",
+    title: "Tools",
     icon: Wrench,
     gradient: "from-orange-400 to-red-500",
     bgGradient: "from-orange-400/20 to-red-500/20",
     skills: [
+      { name: "Git", level: 90, color: "from-gray-600 to-gray-800" },
+      { name: "GitHub", level: 90, color: "from-gray-600 to-gray-800" },
       { name: "VS Code", level: 95, color: "from-blue-400 to-blue-600" },
-      { name: "Git & GitHub", level: 90, color: "from-gray-600 to-gray-800" },
-      { name: "Android Studio", level: 75, color: "from-green-500 to-green-700" },
-      { name: "Google Colab", level: 80, color: "from-yellow-400 to-yellow-600" },
-      { name: "TensorFlow.js", level: 70, color: "from-orange-400 to-orange-600" },
-      { name: "OpenCV", level: 75, color: "from-blue-500 to-blue-700" }
+      { name: "Cursor AI", level: 88, color: "from-indigo-400 to-indigo-600" },
+      { name: "Google Colab", level: 82, color: "from-yellow-400 to-yellow-600" }
     ]
   }
 ];
 
 const achievements = [
-  "Certificate of Excellence (Placement Hackathon, Exploring Academy 2025)",
-  "Certificate of Completion (C Programming)",
-  "Certificate Of Excellence (Graph-e-thon 2024)",
-  "3-month internship as SDE-Intern"
+  "Certificate of Excellence — Graph-e-thon 2024",
+  "C Programming Certification",
+  "Completed SDE Internship at GEU"
 ];
 
 export default function Skills() {
@@ -548,14 +554,14 @@ export default function Skills() {
               className={`text-3xl font-black ${colors.text}`}
               whileHover={{ scale: 1.05 }}
             >
-              Soft Skills
+              Core Competencies
             </motion.h3>
           </motion.div>
           
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Team Player", "Adaptability", "Integrity", "Fluent English Communication",
-              "Socializing", "Visionary Leadership", "Proficient in English Grammar"
+              "Prompt Engineering", "Debugging", "Deployment",
+              "Problem Solving", "Adaptability"
             ].map((skill, index) => (
               <motion.span
                 key={index}
