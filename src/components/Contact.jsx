@@ -21,24 +21,21 @@ const contactInfo = [
     label: "Email",
     value: "priyanshudhyani9808@gmail.com",
     href: "mailto:priyanshudhyani9808@gmail.com",
-    gradient: "from-red-400 to-pink-500",
-    bgGradient: "from-red-400/20 to-pink-500/20"
+    gradient: "from-red-400 to-pink-500"
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+91 9808 129 751",
     href: "tel:+919808129751",
-    gradient: "from-green-400 to-emerald-500",
-    bgGradient: "from-green-400/20 to-emerald-500/20"
+    gradient: "from-green-400 to-emerald-500"
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Uttarakhand, India",
     href: "#",
-    gradient: "from-blue-400 to-cyan-500",
-    bgGradient: "from-blue-400/20 to-cyan-500/20"
+    gradient: "from-blue-400 to-cyan-500"
   }
 ];
 
@@ -47,15 +44,13 @@ const socialLinks = [
     icon: Github,
     label: "GitHub",
     href: "https://github.com/priya-anshu",
-    gradient: "from-gray-600 to-gray-800",
-    bgGradient: "from-gray-600/20 to-gray-800/20"
+    gradient: "from-gray-600 to-gray-800"
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/priyanshu-dhyani-2a7790266/",
-    gradient: "from-blue-500 to-blue-700",
-    bgGradient: "from-blue-500/20 to-blue-700/20"
+    gradient: "from-blue-500 to-blue-700"
   }
 ];
 
@@ -145,11 +140,6 @@ export default function Contact() {
               }}
               style={{ transformStyle: "preserve-3d" }}
             >
-              {/* Animated Background */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-              />
-
               <div className="relative z-10">
                 <motion.div
                   className="flex items-center gap-3 mb-4"
@@ -201,11 +191,6 @@ export default function Contact() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      {/* Animated Background for contact items */}
-                      <motion.div
-                        className={`absolute inset-0 bg-gradient-to-r ${contact.bgGradient} opacity-0 group-hover/contact:opacity-100 transition-opacity duration-300 rounded-2xl`}
-                      />
-
                       <motion.div
                         className={`relative z-10 p-3 rounded-xl bg-gradient-to-r ${contact.gradient} shadow-lg`}
                         whileHover={{
@@ -266,11 +251,6 @@ export default function Contact() {
                         }}
                         style={{ transformStyle: "preserve-3d" }}
                       >
-                        {/* Animated Background for social links */}
-                        <motion.div
-                          className={`absolute inset-0 bg-gradient-to-r ${social.bgGradient} opacity-0 group-hover/social:opacity-100 transition-opacity duration-300`}
-                        />
-
                         <motion.div
                           className="relative z-10"
                           animate={{
@@ -325,11 +305,6 @@ export default function Contact() {
               }}
               style={{ transformStyle: "preserve-3d" }}
             >
-              {/* Animated Background */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-              />
-
               <div className="relative z-10">
                 <motion.div
                   className="flex items-center gap-3 mb-4"
@@ -502,11 +477,6 @@ export default function Contact() {
             }}
             style={{ transformStyle: "preserve-3d" }}
           >
-            {/* Animated Background */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-            />
-
             <div className="relative z-10">
               <motion.div
                 className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl mb-6 shadow-lg"

@@ -1,6 +1,6 @@
 // src/components/Skills.jsx
 import { motion } from "framer-motion";
-import { Code2, Globe, Database, Wrench, Award, Target } from "lucide-react";
+import { Code2, Globe, Database, Wrench, Target } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 
 const skillCategories = [
@@ -68,12 +68,6 @@ const skillCategories = [
   }
 ];
 
-const achievements = [
-  "Certificate of Excellence - Graph-e-thon 2024",
-  "C Programming Certification",
-  "Completed SDE Internship at GEU"
-];
-
 export default function Skills() {
   const { colors } = useTheme();
 
@@ -128,20 +122,6 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className={`mt-4 rounded-2xl p-4 md:p-5 ${colors.surface} ${colors.border} border ${colors.shadow}`}>
-          <div className="flex items-center gap-2 mb-3">
-            <Award className="w-4 h-4 text-amber-400" />
-            <h3 className={`text-sm font-bold ${colors.text}`}>Achievements & Certifications</h3>
-          </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {achievements.map((achievement) => (
-              <li key={achievement} className={`text-xs ${colors.textSecondary} flex gap-2 items-start`}>
-                <span className="text-amber-400" aria-hidden="true">-</span>
-                <span>{achievement}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   );
