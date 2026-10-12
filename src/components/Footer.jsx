@@ -29,8 +29,6 @@ export default function Footer() {
 
   const scrollToSection = (sectionName) => {
     const sections = document.querySelectorAll('section');
-    let targetSection = null;
-    
     // Map section names to their order in the app
     const sectionMap = {
       'About': 0,     // Hero section
