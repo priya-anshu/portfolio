@@ -1,6 +1,6 @@
 // src/components/Hero.jsx
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Code, Coffee, Sparkles, Zap, Star } from "lucide-react";
+import { Github, Linkedin, Mail, Code, Coffee, Sparkles, Download } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 
 export default function Hero() {
@@ -31,125 +31,17 @@ export default function Hero() {
     }
   };
 
-  const floatingVariants = {
-    animate: {
-      y: [-20, 20, -20],
-      rotate: [0, 5, -5, 0],
-      scale: [1, 1.05, 1],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
-  const orbVariants = {
-    animate: {
-      y: [-30, 30, -30],
-      x: [-10, 10, -10],
-      rotate: [0, 360],
-      transition: {
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
-    <section className="relative flex flex-col justify-center items-center min-h-screen px-6 overflow-hidden">
-      {/* 3D Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Orbs */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className={`absolute w-20 h-20 rounded-full bg-gradient-to-br ${
-              i % 3 === 0 ? colors.primary : i % 3 === 1 ? colors.secondary : colors.accent
-            } opacity-20 blur-sm`}
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            variants={orbVariants}
-            animate="animate"
-            transition={{ delay: i * 0.5 }}
-          />
-        ))}
-
-        {/* Geometric Shapes */}
-        <motion.div
-          className={`absolute top-20 right-20 w-32 h-32 bg-gradient-to-br ${colors.primary} opacity-10 transform rotate-45`}
-          animate={{
-            rotate: [45, 225, 45],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-
-        <motion.div
-          className={`absolute bottom-32 left-16 w-24 h-24 bg-gradient-to-br ${colors.accent} opacity-15 rounded-full`}
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.15, 0.3, 0.15],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-
+    <section className="relative flex flex-col justify-center items-center min-h-[75svh] md:min-h-[82vh] px-4 md:px-6 py-14 md:py-0 overflow-hidden">
       <motion.div
         className="relative z-10 max-w-6xl mx-auto text-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        {/* Floating Icons */}
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div
-            className="absolute top-10 left-10"
-            variants={floatingVariants}
-            animate="animate"
-          >
-            <div className={`p-4 rounded-2xl bg-gradient-to-br ${colors.primary} ${colors.shadow} backdrop-blur-sm`}>
-              <Code className="w-8 h-8 text-white" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="absolute top-20 right-16"
-            variants={floatingVariants}
-            animate="animate"
-            transition={{ delay: 1 }}
-          >
-            <div className={`p-4 rounded-2xl bg-gradient-to-br ${colors.secondary} ${colors.shadow} backdrop-blur-sm`}>
-              <Zap className="w-8 h-8 text-white" />
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="absolute bottom-32 left-20"
-            variants={floatingVariants}
-            animate="animate"
-            transition={{ delay: 2 }}
-          >
-            <div className={`p-4 rounded-2xl bg-gradient-to-br ${colors.accent} ${colors.shadow} backdrop-blur-sm`}>
-              <Star className="w-8 h-8 text-white" />
-            </div>
-          </motion.div>
-        </div>
-
         {/* Greeting */}
         <motion.div
-          className="flex items-center justify-center gap-4 mb-8"
+          className="flex items-center justify-center gap-2 mb-4"
           variants={itemVariants}
         >
           <motion.div
@@ -165,7 +57,7 @@ export default function Hero() {
           >
             <Sparkles className="w-10 h-10 my-4 text-yellow-400" />
           </motion.div>
-          <span className={`text-xl md:text-2xl ${colors.textSecondary} font-medium`}>
+          <span className={`text-base md:text-2xl ${colors.textSecondary} font-medium`}>
             Hello, I’m
           </span>
         </motion.div>
@@ -173,10 +65,10 @@ export default function Hero() {
         {/* Main Title with 3D Effect */}
         <motion.div
           variants={itemVariants}
-          className="relative mb-8"
+          className="relative mb-5"
         >
           <motion.h1
-            className={`text-7xl md:text-9xl font-black bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent leading-tight relative z-10`}
+            className={`text-5xl sm:text-7xl md:text-9xl font-black bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent leading-tight relative z-10`}
             style={{
               textShadow: "0 0 40px rgba(168, 85, 247, 0.4)",
             }}
@@ -189,7 +81,7 @@ export default function Hero() {
             Priyanshu
           </motion.h1>
           <motion.h1
-            className={`text-6xl md:text-8xl font-black bg-gradient-to-r ${colors.secondary} bg-clip-text text-transparent leading-tight`}
+            className={`text-5xl sm:text-6xl md:text-8xl font-black bg-gradient-to-r ${colors.secondary} bg-clip-text text-transparent leading-tight`}
             whileHover={{
               scale: 1.05,
               rotateY: -5,
@@ -201,21 +93,21 @@ export default function Hero() {
 
           {/* 3D Shadow Effect */}
           <div 
-            className="absolute inset-0 text-7xl md:text-9xl font-black text-gray-300/10 transform translate-x-2 translate-y-2 -z-10"
+            className="absolute inset-0 text-5xl sm:text-7xl md:text-9xl font-black text-gray-300/10 transform translate-x-2 translate-y-2 -z-10"
             style={{ transform: "translateX(4px) translateY(4px) translateZ(-10px)" }}
           >
             Priyanshu
-            <div className="text-6xl md:text-8xl">Dhyani</div>
+            <div className="text-5xl sm:text-6xl md:text-8xl">Dhyani</div>
           </div>
         </motion.div>
 
         {/* Animated Role */}
         <motion.div
-          className="mb-8"
+          className="mb-5"
           variants={itemVariants}
         >
           <motion.div
-            className={`inline-flex items-center gap-4 px-8 py-4 ${colors.surface} backdrop-blur-md rounded-2xl ${colors.border} ${colors.shadow}`}
+            className={`inline-flex items-center gap-2 px-4 py-3 md:gap-4 md:px-8 md:py-4 ${colors.surface} backdrop-blur-md rounded-2xl ${colors.border} ${colors.shadow}`}
             whileHover={{
               scale: 1.05,
               rotateX: 5,
@@ -225,7 +117,7 @@ export default function Hero() {
           >
             <Code className="w-6 h-6 text-blue-500" />
             <motion.span
-              className={`text-xl md:text-2xl font-bold bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent`}
+              className={`text-sm sm:text-base md:text-2xl font-bold bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent`}
               animate={{
                 backgroundPosition: ["0%", "100%", "0%"],
               }}
@@ -243,28 +135,30 @@ export default function Hero() {
 
         {/* Description */}
         <motion.p
-          className={`text-lg md:text-xl ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed mb-12`}
+          className={`text-sm md:text-lg ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8`}
           variants={itemVariants}
         >
-          I build scalable and user-friendly web applications using React.js, Firebase, and modern development workflows. Skilled in prompt engineering, debugging, and deploying real-time products. Currently learning Machine Learning and Data Science to develop intelligent systems.
+          I build and maintain full-stack products with Next.js, React, and Supabase, and contribute to AI evaluation and data engineering projects. My experience spans production web applications, LLM benchmarking, and Python analytics.
         </motion.p>
 
         {/* 3D Action Buttons */}
         <motion.div
-          className="flex flex-wrap justify-center gap-6 mb-16"
+          className="flex flex-wrap justify-center gap-2 md:gap-4"
           variants={itemVariants}
         >
           {[
-            { href: "https://github.com/priya-anshu", icon: Github, label: "GitHub →", gradient: colors.primary },
-            { href: "https://www.linkedin.com/in/priyanshu-dhyani-2a7790266/", icon: Linkedin, label: "LinkedIn →", gradient: colors.secondary },
-            { href: "mailto:priyanshudhyani9808@gmail.com", icon: Mail, label: "Email →", gradient: colors.accent }
+            { href: "https://github.com/priya-anshu", icon: Github, label: "GitHub", gradient: colors.primary },
+            { href: "https://www.linkedin.com/in/priyanshu-dhyani-2a7790266/", icon: Linkedin, label: "LinkedIn", gradient: colors.secondary },
+            { href: "mailto:priyanshudhyani9808@gmail.com", icon: Mail, label: "Email", gradient: colors.accent },
+            { href: "/Priyanshu_Dhyani_Resume.pdf", icon: Download, label: "Download Resume", gradient: colors.primary, download: true }
           ].map((link, index) => (
             <motion.a
               key={index}
               href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative px-8 py-4 bg-gradient-to-r ${link.gradient} rounded-2xl ${colors.shadow} font-semibold text-white overflow-hidden`}
+              target={link.download ? undefined : "_blank"}
+              rel={link.download ? undefined : "noopener noreferrer"}
+              download={link.download ? "Priyanshu_Dhyani_Resume.pdf" : undefined}
+              className={`group relative px-3 py-2.5 md:px-5 md:py-3 bg-gradient-to-r ${link.gradient} rounded-2xl ${colors.shadow} font-semibold text-white text-xs sm:text-sm overflow-hidden`}
               whileHover={{ 
                 scale: 1.05,
                 rotateY: 10,
@@ -306,43 +200,6 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Animated Stats */}
-        <motion.div
-          className="grid grid-cols-3 gap-8 max-w-md mx-auto mb-16"
-          variants={itemVariants}
-        >
-          {[
-            { value: "2+", label: "Projects Deployed", color: "text-blue-500" },
-            { value: "1", label: "Industry Internship", color: "text-purple-500" },
-            { value: "Cont.", label: "Learning and Skill Growth", color: "text-pink-500" }
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className={`text-center p-6 ${colors.surface} backdrop-blur-md rounded-2xl ${colors.border} ${colors.shadow}`}
-              whileHover={{
-                scale: 1.1,
-                rotateY: 10,
-                z: 20
-              }}
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              <motion.div 
-                className={`text-3xl font-bold ${stat.color} mb-2`}
-                animate={{
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: index * 0.3
-                }}
-              >
-                {stat.value}
-              </motion.div>
-              <div className={`text-sm ${colors.textMuted}`}>{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </motion.div>
     </section>
   );

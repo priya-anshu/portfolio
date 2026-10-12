@@ -88,53 +88,11 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className={`absolute top-20 right-10 w-40 h-40 bg-gradient-to-br ${colors.primary} opacity-10 rounded-full blur-2xl`}
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, -20, 0],
-            y: [0, 15, 0],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className={`absolute bottom-20 left-10 w-32 h-32 bg-gradient-to-br ${colors.accent} opacity-15 rounded-full blur-2xl`}
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, 25, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 11,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 right-1/3 w-24 h-24 bg-gradient-to-br from-pink-400/20 to-purple-500/20 rounded-full blur-xl"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 14,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
-
+    <section className="py-8 md:py-10 px-4 md:px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-8 md:mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -149,7 +107,7 @@ export default function Contact() {
           </motion.div>
           
           <motion.h2
-            className={`text-5xl md:text-7xl font-black bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent leading-tight mb-6`}
+            className={`text-3xl md:text-5xl font-black bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent leading-tight mb-6`}
             whileHover={{
               scale: 1.02,
               rotateY: 2,
@@ -160,7 +118,7 @@ export default function Contact() {
           </motion.h2>
           
           <motion.p
-            className={`text-xl ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}
+            className={`text-sm md:text-base ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -170,16 +128,16 @@ export default function Contact() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* Contact Information */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
             <motion.div
-              className={`group relative overflow-hidden ${colors.surface} backdrop-blur-md rounded-3xl p-8 ${colors.border} ${colors.shadow} transition-all duration-700`}
+              className={`group relative overflow-hidden ${colors.surface} backdrop-blur-md rounded-2xl p-5 md:p-7 ${colors.border} ${colors.shadow} transition-all duration-700`}
               whileHover={{
                 scale: 1.02,
                 rotateY: 2,
@@ -194,7 +152,7 @@ export default function Contact() {
 
               <div className="relative z-10">
                 <motion.div
-                  className="flex items-center gap-4 mb-8"
+                  className="flex items-center gap-3 mb-4"
                   whileHover={{ x: 5 }}
                 >
                   <motion.div
@@ -359,7 +317,7 @@ export default function Contact() {
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
             <motion.form
-              className={`group relative overflow-hidden ${colors.surface} backdrop-blur-md rounded-3xl p-8 ${colors.border} ${colors.shadow} transition-all duration-700`}
+              className={`group relative overflow-hidden ${colors.surface} backdrop-blur-md rounded-2xl p-5 md:p-7 ${colors.border} ${colors.shadow} transition-all duration-700`}
               whileHover={{
                 scale: 1.01,
                 rotateY: -2,
@@ -374,7 +332,7 @@ export default function Contact() {
 
               <div className="relative z-10">
                 <motion.div
-                  className="flex items-center gap-4 mb-8"
+                  className="flex items-center gap-3 mb-4"
                   whileHover={{ x: 5 }}
                 >
                   <motion.div
@@ -412,7 +370,7 @@ export default function Contact() {
                     </label>
                     <motion.input
                       type="text"
-                      className={`w-full px-4 py-4 ${colors.surface} ${colors.text} rounded-2xl ${colors.border} backdrop-blur-sm focus:${colors.borderHover} focus:outline-none transition-all duration-300 font-medium`}
+                      className={`w-full px-3 py-3 md:px-4 md:py-4 ${colors.surface} ${colors.text} rounded-2xl ${colors.border} backdrop-blur-sm focus:${colors.borderHover} focus:outline-none transition-all duration-300 font-medium`}
                       placeholder="Enter your name"
                       whileFocus={{
                         scale: 1.02,
@@ -431,7 +389,7 @@ export default function Contact() {
                     </label>
                     <motion.input
                       type="email"
-                      className={`w-full px-4 py-4 ${colors.surface} ${colors.text} rounded-2xl ${colors.border} backdrop-blur-sm focus:${colors.borderHover} focus:outline-none transition-all duration-300 font-medium`}
+                      className={`w-full px-3 py-3 md:px-4 md:py-4 ${colors.surface} ${colors.text} rounded-2xl ${colors.border} backdrop-blur-sm focus:${colors.borderHover} focus:outline-none transition-all duration-300 font-medium`}
                       placeholder="Enter your email"
                       whileFocus={{
                         scale: 1.02,
@@ -449,8 +407,8 @@ export default function Contact() {
                       Your Message
                     </label>
                     <motion.textarea
-                      rows={6}
-                      className={`w-full px-4 py-4 ${colors.surface} ${colors.text} rounded-2xl ${colors.border} backdrop-blur-sm focus:${colors.borderHover} focus:outline-none transition-all duration-300 resize-none font-medium`}
+                      rows={4}
+                      className={`w-full px-3 py-3 md:px-4 md:py-4 ${colors.surface} ${colors.text} rounded-2xl ${colors.border} backdrop-blur-sm focus:${colors.borderHover} focus:outline-none transition-all duration-300 resize-none font-medium`}
                       placeholder="Tell me about your project or just say hello!"
                       whileFocus={{
                         scale: 1.02,
@@ -461,7 +419,7 @@ export default function Contact() {
 
                   <motion.button
                     type="submit"
-                    className="group/btn w-full flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl shadow-lg font-bold text-white text-lg transition-all duration-300"
+                    className="group/btn w-full flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl shadow-lg font-bold text-white text-sm md:text-base transition-all duration-300"
                     whileHover={{
                       scale: 1.02,
                       rotateY: 2,
@@ -537,7 +495,7 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <motion.div
-            className={`group relative overflow-hidden ${colors.surface} backdrop-blur-md rounded-3xl p-10 ${colors.border} ${colors.shadow} transition-all duration-700`}
+            className={`group relative overflow-hidden ${colors.surface} backdrop-blur-md rounded-2xl p-5 md:p-8 ${colors.border} ${colors.shadow} transition-all duration-700`}
             whileHover={{
               scale: 1.02,
               rotateX: 2,

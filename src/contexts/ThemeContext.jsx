@@ -41,41 +41,41 @@ export const ThemeProvider = ({ children }) => {
     isDark,
     toggleTheme,
     colors: {
-      // Light mode - bright and vibrant
+      // Light mode - warm off-white for reduced glare
       light: {
         primary: 'from-pink-400 via-purple-400 to-indigo-400',
         secondary: 'from-cyan-400 via-blue-400 to-purple-400',
         accent: 'from-orange-400 via-red-400 to-pink-400',
         success: 'from-green-400 via-emerald-400 to-teal-400',
         warning: 'from-yellow-400 via-orange-400 to-red-400',
-        bg: 'from-slate-50 via-blue-50 to-indigo-50',
-        surface: 'bg-white/80',
-        surfaceHover: 'bg-white/90',
+        bg: 'from-[#f7f5ef] via-[#f4f2eb] to-[#efede5]',
+        surface: 'bg-[#fbfaf6]',
+        surfaceHover: 'bg-[#f2f0e8]',
         text: 'text-gray-800',
         textSecondary: 'text-gray-600',
         textMuted: 'text-gray-500',
-        border: 'border-gray-200/50',
-        borderHover: 'border-gray-300/70',
-        shadow: 'shadow-xl shadow-purple-200/50',
-        shadowHover: 'shadow-2xl shadow-purple-300/60'
+        border: 'border-[#e5e1d8]',
+        borderHover: 'border-[#d6d1c6]',
+        shadow: 'shadow-lg shadow-stone-300/30',
+        shadowHover: 'shadow-xl shadow-stone-400/30'
       },
-      // Dark mode - still vibrant but darker
+      // Dark mode - AMOLED black with subtle neutral surfaces
       dark: {
         primary: 'from-pink-500 via-purple-500 to-indigo-500',
         secondary: 'from-cyan-500 via-blue-500 to-purple-500',
         accent: 'from-orange-500 via-red-500 to-pink-500',
         success: 'from-green-500 via-emerald-500 to-teal-500',
         warning: 'from-yellow-500 via-orange-500 to-red-500',
-        bg: 'from-gray-900 via-purple-900/20 to-indigo-900/20',
-        surface: 'bg-gray-800/80',
-        surfaceHover: 'bg-gray-700/80',
+        bg: 'from-black via-black to-black',
+        surface: 'bg-[#0a0a0a]',
+        surfaceHover: 'bg-[#141414]',
         text: 'text-white',
         textSecondary: 'text-gray-200',
         textMuted: 'text-gray-400',
-        border: 'border-gray-700/50',
-        borderHover: 'border-gray-600/70',
-        shadow: 'shadow-xl shadow-purple-900/50',
-        shadowHover: 'shadow-2xl shadow-purple-800/60'
+        border: 'border-[#242424]',
+        borderHover: 'border-[#383838]',
+        shadow: 'shadow-lg shadow-black/60',
+        shadowHover: 'shadow-xl shadow-black/80'
       }
     }
   };

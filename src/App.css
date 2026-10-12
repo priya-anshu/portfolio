@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.theme-background::before,
+.theme-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.theme-background--light::before {
+  background:
+    radial-gradient(ellipse at 8% 12%, rgba(145, 133, 112, 0.09), transparent 34%),
+    radial-gradient(ellipse at 91% 18%, rgba(174, 163, 143, 0.075), transparent 32%),
+    radial-gradient(ellipse at 78% 86%, rgba(125, 119, 105, 0.055), transparent 34%);
+}
+
+.theme-background--dark::before {
+  background:
+    radial-gradient(ellipse at 8% 10%, rgba(255, 255, 255, 0.055), transparent 34%),
+    radial-gradient(ellipse at 92% 24%, rgba(160, 160, 160, 0.045), transparent 32%),
+    radial-gradient(ellipse at 75% 92%, rgba(255, 255, 255, 0.035), transparent 36%);
+}
+
+.theme-background--light::after,
+.theme-background--dark::after {
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 15%, transparent 82%);
+}
+
+.theme-background--light::after {
+  background-image:
+    linear-gradient(rgba(95, 77, 52, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 77, 52, 0.035) 1px, transparent 1px);
+}
+
+.theme-background--dark::after {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}

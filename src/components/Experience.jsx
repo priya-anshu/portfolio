@@ -1,496 +1,214 @@
 // src/components/Experience.jsx
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Briefcase, 
-  Calendar, 
-  MapPin, 
-  ChevronRight,
-  Code,
-  Users,
-  TrendingUp,
-  Award,
-  Sparkles,
-  Building,
-  Target
-} from "lucide-react";
+import { Briefcase, Calendar, MapPin, ChevronRight, Code, Users, TrendingUp, Sparkles, Building } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 
 const experiences = [
   {
     id: 1,
-    company: "Graphic Era Deemed University",
+    company: "Edunosis Education",
+    role: "Software Development Engineer - I",
+    duration: "Jan 2026 - Present",
+    location: "Delhi, India - Remote",
+    type: "Full-time",
+    description: "Own full-stack development across Build-O-Bot, a learning management system for STEM and robotics education, and Vedavan, an e-commerce platform for supplements. Build both products with Next.js, React, and Supabase, prioritizing work across them based on business needs.",
+    skills: ["Next.js", "React", "Supabase", "PostgreSQL", "Authentication", "SEO"],
+    achievements: ["Architected scalable application structures for performance and SEO across both products.", "Implemented authentication, role-based access control, and PostgreSQL row-level data isolation.", "Built an internal admin dashboard to monitor API performance and user activity."],
+    icon: Code,
+    gradient: "from-blue-400 to-indigo-500",
+    bgGradient: "from-blue-400/20 to-indigo-500/20"
+  },
+  {
+    id: 2,
+    company: "Handshake AI",
+    role: "AI Trainer (Freelance)",
+    duration: "Aug 2026 - Present",
+    location: "Remote",
+    type: "Freelance",
+    description: "Evaluate and improve large language model performance through contract-based benchmarking work. Write tasks for Project Dynamo to test model performance against Terminal Bench; previously created image-based STEM reasoning questions for Project Lumiere and reviewed professional work-experience documents for Project Parchment.",
+    skills: ["LLM Evaluation", "Prompt Engineering", "Benchmarking", "Technical Writing"],
+    achievements: ["Create benchmark tasks for evaluating LLM performance against Terminal Bench.", "Developed image-based STEM reasoning questions for Project Lumiere.", "Reviewed professional work-experience documents for Project Parchment."],
+    icon: Sparkles,
+    gradient: "from-lime-400 to-green-500",
+    bgGradient: "from-lime-400/20 to-green-500/20"
+  },
+  {
+    id: 3,
+    company: "The Developers Arena",
+    role: "Data Science Intern",
+    duration: "Dec 2025 - Jun 2026",
+    location: "Remote",
+    type: "Internship",
+    description: "Worked on data engineering and analysis alongside a full-time SDE role. Built an end-to-end Python ETL pipeline using the OpenWeatherMap API and SQLite, and explored five retail, healthcare, and finance datasets for business insights.",
+    skills: ["Python", "SQL", "Pandas", "Matplotlib", "Seaborn", "Data Engineering"],
+    achievements: ["Built an ETL pipeline integrating OpenWeatherMap data and storing processed records in SQLite.", "Analyzed five datasets across retail, healthcare, and finance using Pandas and Matplotlib/Seaborn.", "Created a CLI personal finance tracker in Python using OOP and robust file handling."],
+    icon: TrendingUp,
+    gradient: "from-cyan-400 to-blue-500",
+    bgGradient: "from-cyan-400/20 to-blue-500/20"
+  },
+  {
+    id: 4,
+    company: "Windlas Biotech Limited",
+    role: "Apprentice - CRM & Order Management",
+    duration: "Oct 2025 - Nov 2025",
+    location: "Dehradun, Uttarakhand, India - On-site",
+    type: "Apprenticeship",
+    description: "Managed the sales and purchase order pipeline in the CRM system for a nutraceutical product line covering supplements and multivitamins. Maintained inventory and batch records, checking stock against production needs to support accurate planning.",
+    skills: ["Customer Relationship Management (CRM)", "Inventory Management", "Order Management"],
+    achievements: ["Managed sales and purchase orders in the CRM system.", "Maintained inventory and batch records for supplements and multivitamins.", "Cross-checked stock against production requirements to keep planning accurate."],
+    icon: Briefcase,
+    gradient: "from-green-400 to-lime-500",
+    bgGradient: "from-green-400/20 to-lime-500/20"
+  },
+  {
+    id: 5,
+    company: "Pledgent Technologies Pvt. Ltd.",
+    role: "React Developer Intern",
+    duration: "Jun 2025 - Aug 2025",
+    location: "Remote",
+    type: "Internship",
+    description: "Built component-based interfaces and managed application state with React, hooks, React Router, and Redux Toolkit. Integrated Firebase authentication, Firestore, and Realtime Database, then tested and deployed projects.",
+    skills: ["React.js", "Tailwind CSS", "Redux Toolkit", "Firebase", "Jest", "React Testing Library"],
+    achievements: ["Built reusable UI components and managed global state with Redux Toolkit.", "Integrated Firebase authentication, Firestore, and Realtime Database.", "Tested with Jest and React Testing Library and deployed projects on Netlify and Vercel."],
+    icon: Code,
+    gradient: "from-purple-400 to-pink-500",
+    bgGradient: "from-purple-400/20 to-pink-500/20"
+  },
+  {
+    id: 6,
+    company: "Graphic Era Deemed to be University",
     role: "SDE Intern",
-    duration: "Apr 2024 – Jul 2024",
+    duration: "Apr 2024 - Jul 2024",
     location: "Dehradun, India",
     type: "Internship",
-    description: "Developed and enhanced front-end modules for internal applications.",
-    skills: [
-      "HTML", "CSS", "MongoDB", "Git", "GitHub"
-    ],
-    achievements: [
-      "Developed and enhanced front-end modules for internal applications.",
-      "Assisted in frontend-to-backend integration and debugging.",
-      "Improved UI responsiveness and code efficiency.",
-      "Maintained documentation and Git version control practices."
-    ],
+    description: "Collaborated with the development team to analyze software requirements and streamline internal workflows. Maintained technical documentation and organized project data, and took part in code reviews and debugging sessions to improve application stability.",
+    skills: ["HTML", "CSS", "Documentation", "Code Review", "Debugging"],
+    achievements: ["Supported software requirements analysis and improvements to internal workflows.", "Maintained technical documentation and organized project data.", "Participated in code reviews and debugging to improve application stability."],
     icon: Users,
-    gradient: "from-green-400 to-emerald-500",
-    bgGradient: "from-green-400/20 to-emerald-500/20"
+    gradient: "from-orange-400 to-red-500",
+    bgGradient: "from-orange-400/20 to-red-500/20"
+  },
+  {
+    id: 7,
+    company: "Graphic Era Hill University",
+    role: "Volunteer",
+    duration: "Jan 2024 - May 2025",
+    location: "Dehradun, India",
+    type: "Volunteer",
+    description: "Coordinated university-level hackathons and cultural festivals, managing logistics for 200+ participants. Served as a liaison between student committees and faculty, and mentored junior students on campus resources and peer-to-peer technical learning.",
+    skills: ["Public Speaking", "Team Leadership", "Event Coordination", "Mentoring"],
+    achievements: ["Managed event logistics for university hackathons and cultural festivals with 200+ participants.", "Connected student committees and faculty to coordinate events.", "Mentored junior students on campus resources and technical learning."],
+    icon: Users,
+    gradient: "from-rose-400 to-orange-500",
+    bgGradient: "from-rose-400/20 to-orange-500/20"
   }
 ];
 
 export default function Experience() {
   const { colors } = useTheme();
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { x: -50, opacity: 0, rotateY: -15 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      rotateY: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
-      }
-    }
-  };
+  const [selectedId, setSelectedId] = useState(experiences[0].id);
+  const selectedExperience = experiences.find((experience) => experience.id === selectedId);
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+    <section className="py-8 md:py-10 px-4 md:px-6 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
-          className={`absolute top-20 right-10 w-40 h-40 bg-gradient-to-br ${colors.primary} opacity-10 rounded-full blur-2xl`}
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, -30, 0],
-            y: [0, 20, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className={`absolute bottom-20 left-10 w-32 h-32 bg-gradient-to-br ${colors.accent} opacity-15 rounded-full blur-2xl`}
-          animate={{
-            scale: [1, 1.4, 1],
-            x: [0, 40, 0],
-            y: [0, -25, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute top-1/3 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-400/20 to-red-500/20 rounded-full blur-xl"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section Header */}
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="text-center mb-9"
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <motion.div
-            className="inline-flex items-center gap-3 mb-6"
-            whileHover={{ scale: 1.05 }}
-          >
-            <Building className="w-8 h-8 text-green-400" />
-            <span className={`text-lg ${colors.textSecondary} font-medium`}>My Journey</span>
-          </motion.div>
-          
-          <motion.h2
-            className={`text-5xl md:text-7xl font-black bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent leading-tight mb-6`}
-            whileHover={{
-              scale: 1.02,
-              rotateY: 2,
-            }}
-            style={{ transformStyle: "preserve-3d" }}
-          >
-            Professional Experience
-          </motion.h2>
-          
-          <motion.p
-            className={`text-xl ${colors.textSecondary} max-w-3xl mx-auto leading-relaxed`}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            Building expertise through hands-on experience in software development and technology
-          </motion.p>
-        </motion.div>
-
-        {/* Experience Timeline */}
-        <motion.div
-          className="relative"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          {/* Enhanced Timeline Line */}
-          <motion.div
-            className={`absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b ${colors.primary} hidden md:block rounded-full`}
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
-            transition={{ duration: 2, ease: "easeOut" }}
-            style={{ transformOrigin: "top" }}
-          />
-
-          <div className="space-y-16">
-            {experiences.map((experience, index) => (
-              <motion.div
-                key={experience.id}
-                variants={itemVariants}
-                className="relative group"
-              >
-                {/* Enhanced Timeline Dot */}
-                <motion.div
-                  className={`absolute left-6 top-8 w-6 h-6 bg-gradient-to-r ${experience.gradient} rounded-full border-4 ${colors.surface} hidden md:block ${colors.shadow}`}
-                  whileHover={{ scale: 1.2 }}
-                  animate={{
-                    boxShadow: [
-                      "0 0 0 0 rgba(59, 130, 246, 0.4)",
-                      "0 0 0 10px rgba(59, 130, 246, 0)",
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.5
-                  }}
-                />
-
-                {/* Experience Card */}
-                <div className="md:ml-20">
-                  <motion.div
-                    className={`
-                      group/card relative overflow-hidden rounded-3xl ${colors.surface} backdrop-blur-md 
-                      ${colors.border} ${colors.shadow} transition-all duration-700
-                      hover:${colors.shadowHover} hover:${colors.borderHover}
-                    `}
-                    whileHover={{
-                      scale: 1.02,
-                      rotateX: 2,
-                      rotateY: index % 2 === 0 ? 2 : -2,
-                      z: 30
-                    }}
-                    style={{ transformStyle: "preserve-3d" }}
-                  >
-                    {/* Animated Background Gradient */}
-                    <motion.div
-                      className={`absolute inset-0 bg-gradient-to-br ${experience.bgGradient} opacity-0 group-hover/card:opacity-100 transition-opacity duration-700`}
-                    />
-
-                    <div className="p-10 lg:p-12 relative z-10">
-                      {/* Header */}
-                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
-                        <motion.div
-                          className="flex items-center gap-6 mb-6 lg:mb-0"
-                          whileHover={{ x: 5 }}
-                        >
-                          <motion.div
-                            className={`p-4 rounded-2xl bg-gradient-to-br ${experience.gradient} ${colors.shadow}`}
-                            whileHover={{
-                              scale: 1.1,
-                              rotate: 5,
-                            }}
-                            whileTap={{ scale: 0.95 }}
-                          >
-                            <experience.icon className="w-8 h-8 text-white" />
-                          </motion.div>
-                          <div>
-                            <motion.h3
-                              className={`text-3xl lg:text-4xl font-black ${colors.text} mb-2`}
-                              whileHover={{ scale: 1.05 }}
-                            >
-                              {experience.role}
-                            </motion.h3>
-                            <motion.p
-                              className={`text-xl ${colors.textSecondary} font-semibold`}
-                              whileHover={{ x: 3 }}
-                            >
-                              {experience.company}
-                            </motion.p>
-                          </div>
-                        </motion.div>
-
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <motion.div
-                            className={`flex items-center gap-2 ${colors.textMuted}`}
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            <Calendar className="w-5 h-5" />
-                            <span className="text-sm font-medium">{experience.duration}</span>
-                          </motion.div>
-                          <motion.div
-                            className={`flex items-center gap-2 ${colors.textMuted}`}
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            <MapPin className="w-5 h-5" />
-                            <span className="text-sm font-medium">{experience.location}</span>
-                          </motion.div>
-                          <motion.span
-                            className={`px-4 py-2 text-sm font-bold bg-gradient-to-r ${experience.gradient} text-white rounded-full shadow-lg w-fit`}
-                            animate={{
-                              boxShadow: [
-                                "0 0 0 0 rgba(59, 130, 246, 0.4)",
-                                "0 0 0 8px rgba(59, 130, 246, 0)",
-                              ]
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              delay: index * 0.3
-                            }}
-                          >
-                            {experience.type}
-                          </motion.span>
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <motion.p
-                        className={`${colors.textSecondary} leading-relaxed mb-8 text-lg`}
-                        whileHover={{ x: 5 }}
-                      >
-                        {experience.description}
-                      </motion.p>
-
-                      {/* Skills */}
-                      <motion.div
-                        className="mb-8"
-                        whileHover={{ x: 5 }}
-                      >
-                        <h4 className={`text-sm font-bold ${colors.text} mb-4 flex items-center gap-2`}>
-                          <Target className="w-5 h-5 text-orange-400" />
-                          Technologies & Skills
-                        </h4>
-                        <div className="flex flex-wrap gap-3">
-                          {experience.skills.map((skill, skillIndex) => (
-                            <motion.span
-                              key={skillIndex}
-                              className={`px-4 py-2 text-sm ${colors.surface} ${colors.text} rounded-xl ${colors.border} backdrop-blur-sm font-medium`}
-                              whileHover={{
-                                scale: 1.05,
-                                backgroundColor: "rgba(59, 130, 246, 0.1)"
-                              }}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              whileInView={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: skillIndex * 0.05 }}
-                            >
-                              {skill}
-                            </motion.span>
-                          ))}
-                        </div>
-                      </motion.div>
-
-                      {/* Key Achievements */}
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                      >
-                        <h4 className={`text-sm font-bold ${colors.text} mb-6 flex items-center gap-2`}>
-                          <Award className="w-5 h-5 text-yellow-400" />
-                          Key Achievements
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {experience.achievements.map((achievement, achievementIndex) => (
-                            <motion.div
-                              key={achievementIndex}
-                              className={`flex items-start gap-3 ${colors.textMuted}`}
-                              initial={{ opacity: 0, x: -20 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              transition={{ delay: achievementIndex * 0.1 }}
-                              whileHover={{ x: 5 }}
-                            >
-                              <motion.div
-                                animate={{
-                                  rotate: [0, 90, 0],
-                                }}
-                                transition={{
-                                  duration: 2,
-                                  repeat: Infinity,
-                                  delay: achievementIndex * 0.2
-                                }}
-                              >
-                                <ChevronRight className="w-4 h-4 text-blue-400 mt-1 flex-shrink-0" />
-                              </motion.div>
-                              <span className="text-sm leading-relaxed font-medium">{achievement}</span>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    </div>
-
-                    {/* Enhanced Decorative Elements */}
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-700"></div>
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-white/5 to-transparent rounded-full blur-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-700"></div>
-
-                    {/* Floating particles */}
-                    {[...Array(6)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute w-1 h-1 bg-white/40 rounded-full"
-                        style={{
-                          top: `${Math.random() * 100}%`,
-                          left: `${Math.random() * 100}%`,
-                        }}
-                        animate={{
-                          y: [-15, 15, -15],
-                          opacity: [0.2, 0.8, 0.2],
-                          scale: [0.5, 1, 0.5],
-                        }}
-                        transition={{
-                          duration: 3 + Math.random() * 2,
-                          repeat: Infinity,
-                          delay: Math.random() * 2,
-                        }}
-                      />
-                    ))}
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
+          <div className="inline-flex items-center gap-2 mb-3">
+            <Building className="w-5 h-5 text-green-400" />
+            <span className={`text-sm ${colors.textSecondary} font-medium`}>My Journey</span>
           </div>
+          <h2 className={`text-4xl md:text-5xl font-black bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent leading-tight mb-3`}>
+            Experience
+          </h2>
+          <p className={`text-base ${colors.textSecondary} max-w-2xl mx-auto`}>
+            Select a role to see what I worked on.
+          </p>
         </motion.div>
 
-        {/* Enhanced Experience Summary */}
-        <motion.div
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          {[
-            {
-              value: "2+",
-              label: "Years of Experience",
-              gradient: "from-blue-400 to-cyan-500",
-              bgGradient: "from-blue-400/20 to-cyan-500/20",
-              icon: Calendar
-            },
-            {
-              value: "3",
-              label: "Professional Roles",
-              gradient: "from-green-400 to-emerald-500",
-              bgGradient: "from-green-400/20 to-emerald-500/20",
-              icon: Briefcase
-            },
-            {
-              value: "15+",
-              label: "Technologies Used",
-              gradient: "from-purple-400 to-pink-500",
-              bgGradient: "from-purple-400/20 to-pink-500/20",
-              icon: Code
-            }
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              className={`group relative overflow-hidden text-center p-8 ${colors.surface} backdrop-blur-md rounded-3xl ${colors.border} ${colors.shadow} transition-all duration-700`}
-              whileHover={{
-                scale: 1.05,
-                rotateY: 5,
-                z: 20
-              }}
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              {/* Animated Background */}
-              <motion.div
-                className={`absolute inset-0 bg-gradient-to-br ${stat.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
-              />
+        <div className="grid md:grid-cols-[0.9fr_1.4fr] gap-4 md:gap-6 items-start">
+          <div className={`rounded-2xl ${colors.surface} ${colors.border} border overflow-hidden`} role="group" aria-label="Choose an experience role">
+            {experiences.map((experience, index) => {
+              const isSelected = selectedId === experience.id;
+              return (
+                <motion.button
+                  key={experience.id}
+                  type="button"
+                  onClick={() => setSelectedId(experience.id)}
+                  aria-pressed={isSelected}
+                  className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${index ? `border-t ${colors.border}` : ""} ${isSelected ? "bg-blue-500/10" : "hover:bg-white/5"}`}
+                  whileHover={{ x: 2 }}
+                  whileTap={{ scale: 0.99 }}
+                >
+                  <span className={`shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br ${experience.gradient} flex items-center justify-center`}>
+                    <experience.icon className="w-4 h-4 text-white" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className={`block text-sm font-semibold ${colors.text} truncate`}>{experience.role}</span>
+                    <span className={`block text-xs ${colors.textMuted} truncate`}>{experience.company} - {experience.duration}</span>
+                  </span>
+                  <ChevronRight className={`w-4 h-4 shrink-0 transition-transform ${isSelected ? "text-blue-400 translate-x-0.5" : colors.textMuted}`} />
+                </motion.button>
+              );
+            })}
+          </div>
 
-              <div className="relative z-10">
-                <motion.div
-                  className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${stat.gradient} rounded-2xl mb-6 ${colors.shadow}`}
-                  whileHover={{
-                    scale: 1.1,
-                    rotate: 10,
-                  }}
-                  animate={{
-                    y: [0, -5, 0],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: index * 0.5
-                  }}
-                >
-                  <stat.icon className="w-8 h-8 text-white" />
-                </motion.div>
-                
-                <motion.div
-                  className={`text-4xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent mb-3`}
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.3
-                  }}
-                >
-                  {stat.value}
-                </motion.div>
-                
-                <p className={`${colors.textSecondary} font-medium`}>
-                  {stat.label}
-                </p>
+          <motion.article
+            key={selectedExperience.id}
+            className={`rounded-2xl p-5 md:p-6 ${colors.surface} ${colors.border} border relative overflow-hidden`}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+            aria-live="polite"
+          >
+            <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${selectedExperience.gradient}`} />
+            <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+              <div>
+                <span className={`inline-flex items-center gap-1.5 text-xs font-semibold ${colors.textMuted} mb-2`}>
+                  <Calendar className="w-3.5 h-3.5" /> {selectedExperience.duration}
+                </span>
+                <h3 className={`text-xl md:text-2xl font-bold ${colors.text}`}>{selectedExperience.role}</h3>
+                <p className={`text-sm ${colors.textSecondary} mt-1`}>{selectedExperience.company}</p>
               </div>
-
-              {/* Floating particles */}
-              {[...Array(4)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute w-1 h-1 bg-white/40 rounded-full"
-                  style={{
-                    top: `${Math.random() * 100}%`,
-                    left: `${Math.random() * 100}%`,
-                  }}
-                  animate={{
-                    y: [-10, 10, -10],
-                    opacity: [0.2, 0.8, 0.2],
-                    scale: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 3 + Math.random() * 2,
-                    repeat: Infinity,
-                    delay: Math.random() * 2,
-                  }}
-                />
-              ))}
-            </motion.div>
-          ))}
-        </motion.div>
+              <span className={`px-2.5 py-1 text-xs font-semibold bg-gradient-to-r ${selectedExperience.gradient} text-white rounded-full`}>
+                {selectedExperience.type}
+              </span>
+            </div>
+            <p className={`flex items-center gap-1.5 text-xs ${colors.textMuted} mb-4`}>
+              <MapPin className="w-3.5 h-3.5 shrink-0" /> {selectedExperience.location}
+            </p>
+            <p className={`text-sm ${colors.textSecondary} leading-relaxed mb-5`}>
+              {selectedExperience.description}
+            </p>
+            <div className="mb-5">
+              <h4 className={`text-xs uppercase tracking-wider font-bold ${colors.textMuted} mb-2`}>Focus areas</h4>
+              <div className="flex flex-wrap gap-1.5">
+                {selectedExperience.skills.map((skill) => (
+                  <span key={skill} className={`px-2.5 py-1 text-xs ${colors.surface} ${colors.textSecondary} rounded-lg ${colors.border} border`}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4 className={`text-xs uppercase tracking-wider font-bold ${colors.textMuted} mb-2`}>Highlights</h4>
+              <ul className="space-y-2">
+                {selectedExperience.achievements.map((achievement) => (
+                  <li key={achievement} className={`flex items-start gap-2 text-sm ${colors.textSecondary}`}>
+                    <ChevronRight className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.article>
+        </div>
       </div>
     </section>
   );
