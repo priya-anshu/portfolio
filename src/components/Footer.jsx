@@ -11,19 +11,19 @@ export default function Footer() {
       icon: Github,
       href: "https://github.com/priya-anshu",
       label: "GitHub",
-      color: "hover:text-gray-900 dark:hover:text-white"
+      color: "theme-hover-accent"
     },
     {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/priyanshu-dhyani-2a7790266/",
       label: "LinkedIn",
-      color: "hover:text-blue-600"
+      color: "theme-hover-accent"
     },
     {
       icon: Mail,
       href: "mailto:priyanshidhyani9808@gmail.com",
       label: "Email",
-      color: "hover:text-red-500"
+      color: "theme-hover-accent"
     }
   ];
 
@@ -124,7 +124,7 @@ export default function Footer() {
                 >
                   <motion.button
                     onClick={link.onClick}
-                    className={`${colors.textSecondary} hover:text-purple-500 transition-colors duration-300 flex items-center gap-2 group`}
+                    className={`${colors.textSecondary} theme-hover-accent transition-colors duration-300 flex items-center gap-2 group`}
                     whileHover={{ x: 5 }}
                   >
                     <Code className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -168,7 +168,7 @@ export default function Footer() {
               {/* Back to Top Button */}
               <motion.button
                 onClick={scrollToTop}
-                className={`mt-4 p-3 rounded-xl ${colors.surface} ${colors.border} border ${colors.textSecondary} hover:text-purple-500 transition-all duration-300 group flex items-center gap-2`}
+                className={`mt-4 p-3 rounded-xl ${colors.surface} ${colors.border} border ${colors.textSecondary} theme-hover-accent transition-all duration-300 group flex items-center gap-2`}
                 whileHover={{ 
                   scale: 1.05,
                   backgroundColor: "rgba(99, 102, 241, 0.1)",
@@ -203,14 +203,14 @@ export default function Footer() {
             transition={{ delay: 0.5 }}
           >
             <motion.span
-              className={`${colors.textMuted} hover:text-purple-500 cursor-pointer transition-colors`}
+              className={`${colors.textMuted} theme-hover-accent cursor-pointer transition-colors`}
               whileHover={{ scale: 1.05 }}
             >
               Privacy Policy
             </motion.span>
             <span className={colors.textMuted}>•</span>
             <motion.span
-              className={`${colors.textMuted} hover:text-purple-500 cursor-pointer transition-colors`}
+              className={`${colors.textMuted} theme-hover-accent cursor-pointer transition-colors`}
               whileHover={{ scale: 1.05 }}
             >
               Terms of Service

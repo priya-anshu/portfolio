@@ -8,17 +8,19 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ThemeCanvas from "./components/ThemeCanvas";
 import "./App.css";
 
 function AppContent() {
   const { colors, isDark } = useTheme();
 
   return (
-    <div className={`relative isolate min-h-screen font-sans transition-colors duration-500 bg-gradient-to-br ${colors.bg}`}>
+    <div className={`theme-shell relative isolate min-h-screen font-sans transition-colors duration-500 bg-gradient-to-br ${colors.bg}`}>
       <div
         className={`theme-background ${isDark ? "theme-background--dark" : "theme-background--light"}`}
         aria-hidden="true"
       />
+      <ThemeCanvas />
       <ThemeToggle />
       <div className="relative z-10">
         <Hero />

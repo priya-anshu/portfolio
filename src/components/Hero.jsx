@@ -70,7 +70,7 @@ export default function Hero() {
           <motion.h1
             className={`text-5xl sm:text-7xl md:text-9xl font-black bg-gradient-to-r ${colors.primary} bg-clip-text text-transparent leading-tight relative z-10`}
             style={{
-              textShadow: "0 0 40px rgba(168, 85, 247, 0.4)",
+              textShadow: "0 0 40px var(--theme-glow)",
             }}
             whileHover={{
               scale: 1.05,
@@ -185,7 +185,7 @@ export default function Hero() {
 
               {/* Animated background */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
+                className="theme-gradient-overlay absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: "100%" }}
                 transition={{ duration: 0.6 }}

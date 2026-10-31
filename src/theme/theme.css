@@ -1,0 +1,74 @@
+:root {
+  --theme-accent: #d9468f;
+  --theme-accent-secondary: #6366f1;
+  --theme-glow: rgba(139, 92, 246, 0.1);
+  --theme-ambient: rgba(145, 133, 112, 0.06);
+  --theme-control: rgba(251, 250, 246, 0.94);
+  --theme-control-text: #1f2937;
+  --theme-panel: #fbfaf6;
+  --theme-panel-text: #1f2937;
+}
+
+html.dark {
+  --theme-accent: #a78bfa;
+  --theme-accent-secondary: #67e8f9;
+  --theme-glow: rgba(167, 139, 250, 0.14);
+  --theme-ambient: rgba(103, 232, 249, 0.06);
+  --theme-control: rgba(17, 26, 43, 0.96);
+  --theme-control-text: #e2e8f0;
+  --theme-panel: #111a2b;
+  --theme-panel-text: #e2e8f0;
+}
+
+:root[data-theme="day-mode"] {
+  --theme-accent: #d9468f;
+  --theme-accent-secondary: #6366f1;
+  --theme-glow: rgba(139, 92, 246, 0.1);
+  --theme-ambient: rgba(145, 133, 112, 0.06);
+}
+
+:root[data-theme="night-mode"] {
+  --theme-accent: #a78bfa;
+  --theme-accent-secondary: #67e8f9;
+  --theme-glow: rgba(167, 139, 250, 0.14);
+  --theme-ambient: rgba(103, 232, 249, 0.06);
+}
+
+:root[data-theme="halloween"] {
+  --theme-accent: #ff923f;
+  --theme-accent-secondary: #ba79ff;
+  --theme-glow: rgba(255, 126, 48, 0.12);
+  --theme-ambient: rgba(145, 58, 35, 0.08);
+}
+
+:root[data-theme="christmas"] {
+  --theme-accent: #67d69d;
+  --theme-accent-secondary: #f3cf82;
+  --theme-glow: rgba(103, 214, 157, 0.1);
+  --theme-ambient: rgba(64, 144, 118, 0.08);
+}
+
+:root[data-theme="new-years"] {
+  --theme-accent: #f5c451;
+  --theme-accent-secondary: #bd83ff;
+  --theme-glow: rgba(192, 132, 252, 0.13);
+  --theme-ambient: rgba(168, 85, 247, 0.08);
+}
+
+:root[data-theme="earth-day"] {
+  --theme-accent: #4f8d43;
+  --theme-accent-secondary: #ae8a44;
+  --theme-glow: rgba(77, 124, 15, 0.08);
+  --theme-ambient: rgba(101, 163, 13, 0.06);
+}
+
+:root[data-theme="valentines"] {
+  --theme-accent: #9a8060;
+  --theme-accent-secondary: #b7a58b;
+  --theme-glow: rgba(171, 141, 98, 0.1);
+  --theme-ambient: rgba(147, 132, 108, 0.06);
+}
+
+body {
+  transition: background-color 350ms ease;
+}

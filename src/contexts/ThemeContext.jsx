@@ -1,5 +1,7 @@
 // src/contexts/ThemeContext.jsx
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import useTimeTheme from '../hooks/useTimeTheme';
+import { themePalettes } from '../theme/themePalettes';
 
 const ThemeContext = createContext();
 
@@ -12,20 +14,20 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const { themeToken, themeOverride, setThemeOverride, baseTheme } = useTimeTheme();
+  const [appearancePreference, setAppearancePreference] = useState(() => {
+    const savedMode = localStorage.getItem('theme');
+    return savedMode === 'dark' || savedMode === 'light' ? savedMode : null;
+  });
+  const isDark = themeOverride === 'night-mode'
+    ? true
+    : themeOverride === 'day-mode'
+      ? false
+      : appearancePreference
+        ? appearancePreference === 'dark'
+        : baseTheme === 'night-mode';
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setIsDark(savedTheme === 'dark');
-    } else {
-      // Default to light mode for bright colors
-      setIsDark(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
@@ -33,57 +35,46 @@ export const ThemeProvider = ({ children }) => {
     }
   }, [isDark]);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
-
-  const theme = {
-    isDark,
-    toggleTheme,
-    colors: {
-      // Light mode - warm off-white for reduced glare
-      light: {
-        primary: 'from-pink-400 via-purple-400 to-indigo-400',
-        secondary: 'from-cyan-400 via-blue-400 to-purple-400',
-        accent: 'from-orange-400 via-red-400 to-pink-400',
-        success: 'from-green-400 via-emerald-400 to-teal-400',
-        warning: 'from-yellow-400 via-orange-400 to-red-400',
-        bg: 'from-[#f7f5ef] via-[#f4f2eb] to-[#efede5]',
-        surface: 'bg-[#fbfaf6]',
-        surfaceHover: 'bg-[#f2f0e8]',
-        text: 'text-gray-800',
-        textSecondary: 'text-gray-600',
-        textMuted: 'text-gray-500',
-        border: 'border-[#e5e1d8]',
-        borderHover: 'border-[#d6d1c6]',
-        shadow: 'shadow-lg shadow-stone-300/30',
-        shadowHover: 'shadow-xl shadow-stone-400/30'
-      },
-      // Dark mode - AMOLED black with subtle neutral surfaces
-      dark: {
-        primary: 'from-pink-500 via-purple-500 to-indigo-500',
-        secondary: 'from-cyan-500 via-blue-500 to-purple-500',
-        accent: 'from-orange-500 via-red-500 to-pink-500',
-        success: 'from-green-500 via-emerald-500 to-teal-500',
-        warning: 'from-yellow-500 via-orange-500 to-red-500',
-        bg: 'from-black via-black to-black',
-        surface: 'bg-[#0a0a0a]',
-        surfaceHover: 'bg-[#141414]',
-        text: 'text-white',
-        textSecondary: 'text-gray-200',
-        textMuted: 'text-gray-400',
-        border: 'border-[#242424]',
-        borderHover: 'border-[#383838]',
-        shadow: 'shadow-lg shadow-black/60',
-        shadowHover: 'shadow-xl shadow-black/80'
-      }
+  const updateThemeOverride = (nextTheme) => {
+    setThemeOverride(nextTheme);
+    if (nextTheme === 'day-mode') {
+      localStorage.setItem('theme', 'light');
+      setAppearancePreference('light');
+    } else if (nextTheme === 'night-mode') {
+      localStorage.setItem('theme', 'dark');
+      setAppearancePreference('dark');
+    } else if (nextTheme === null) {
+      localStorage.removeItem('theme');
+      setAppearancePreference(null);
     }
   };
 
-  const currentColors = isDark ? theme.colors.dark : theme.colors.light;
+  const toggleTheme = () => {
+    const nextMode = isDark ? 'light' : 'dark';
+    const nextIsDark = nextMode === 'dark';
+    localStorage.setItem('theme', nextMode);
+    setAppearancePreference(nextMode);
+
+    if (themeToken === 'day-mode' || themeToken === 'night-mode') {
+      setThemeOverride(nextIsDark ? 'night-mode' : 'day-mode');
+    }
+  };
+
+  const colors = themePalettes[isDark ? 'night-mode' : 'day-mode'];
+  const theme = {
+    isDark,
+    toggleTheme,
+    colors,
+  };
 
   return (
-    <ThemeContext.Provider value={{ ...theme, colors: currentColors }}>
+    <ThemeContext.Provider value={{
+      ...theme,
+      colors,
+      themeToken,
+      themeOverride,
+      setThemeOverride: updateThemeOverride,
+    }}>
       {children}
     </ThemeContext.Provider>
   );

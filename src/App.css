@@ -1,3 +1,5 @@
+@import "./theme/theme.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,43 +10,74 @@
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  background:
+    radial-gradient(ellipse at 8% 12%, var(--theme-ambient), transparent 28%),
+    radial-gradient(ellipse at 91% 18%, var(--theme-glow), transparent 26%),
+    radial-gradient(ellipse at 78% 86%, var(--theme-ambient), transparent 30%);
 }
 
-.theme-background::before,
-.theme-background::after {
+.theme-background::before {
   content: "";
   position: absolute;
   inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 14%,
+    var(--theme-glow),
+    transparent 58%
+  );
+  opacity: 0.12;
 }
 
-.theme-background--light::before {
-  background:
-    radial-gradient(ellipse at 8% 12%, rgba(145, 133, 112, 0.09), transparent 34%),
-    radial-gradient(ellipse at 91% 18%, rgba(174, 163, 143, 0.075), transparent 32%),
-    radial-gradient(ellipse at 78% 86%, rgba(125, 119, 105, 0.055), transparent 34%);
+.theme-shell .theme-hover-accent:hover {
+  color: var(--theme-accent) !important;
 }
 
-.theme-background--dark::before {
-  background:
-    radial-gradient(ellipse at 8% 10%, rgba(255, 255, 255, 0.055), transparent 34%),
-    radial-gradient(ellipse at 92% 24%, rgba(160, 160, 160, 0.045), transparent 32%),
-    radial-gradient(ellipse at 75% 92%, rgba(255, 255, 255, 0.035), transparent 36%);
+.theme-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-.theme-background--light::after,
-.theme-background--dark::after {
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse at center, black 15%, transparent 82%);
+.theme-shell .theme-control-button {
+  border-color: color-mix(in srgb, var(--theme-accent), transparent 55%);
+  background: var(--theme-control);
+  color: var(--theme-control-text);
+  box-shadow: 0 0 18px var(--theme-glow);
 }
 
-.theme-background--light::after {
-  background-image:
-    linear-gradient(rgba(95, 77, 52, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(95, 77, 52, 0.035) 1px, transparent 1px);
+.theme-shell a,
+.theme-shell button {
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
 }
 
-.theme-background--dark::after {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+.theme-preview-panel {
+  border-color: color-mix(in srgb, var(--theme-accent), transparent 55%);
+  background: var(--theme-panel);
+  color: var(--theme-panel-text);
+  backdrop-filter: blur(16px);
+}
+
+.theme-preview-panel select {
+  border-color: color-mix(in srgb, var(--theme-accent), transparent 55%);
+  background: var(--theme-panel);
+  color: var(--theme-panel-text);
+}
+
+.theme-preview-panel option {
+  background: var(--theme-panel);
+  color: var(--theme-panel-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-shell *,
+  .theme-shell *::before,
+  .theme-shell *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
